@@ -13,6 +13,6 @@ public @interface ForeignKey {
 
 	Class<?> referenceTable();
 
-	String[] referenceColumn();
+	String[] referenceColumns();
 
 }

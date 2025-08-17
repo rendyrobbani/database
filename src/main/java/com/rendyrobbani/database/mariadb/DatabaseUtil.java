@@ -61,7 +61,7 @@ public final class DatabaseUtil {
 			Map<String, Field> into = filterFieldOfColumns(foreignKey.referenceTable()).stream().collect(Collectors.toMap(field -> field.getAnnotation(Column.class).name(), Function.identity()));
 
 			List<String> intoColumns = new ArrayList<>();
-			for (String columnName : foreignKey.referenceColumn()) {
+			for (String columnName : foreignKey.referenceColumns()) {
 				if (!into.containsKey(columnName)) throw new IllegalArgumentException("Column '" + columnName + "' is not present in class '" + foreignKey.referenceTable().getName() + "'");
 				intoColumns.add(columnName);
 			}
